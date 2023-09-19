@@ -33,5 +33,15 @@
             android:textStyle="bold"
             app:layout_constraintTop_toTopOf="parent"
             android:visibility="@{viewModel.countryList.empty? View.VISIBLE : View.GONE}" />
+
+        <TextView
+            android:id="@+id/errorMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.error}"
+            android:textStyle="bold"
+            android:textColor="@color/design_default_color_error"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="@{viewModel.error.empty? View.GONE : View.VISIBLE}" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -2,7 +2,6 @@ package com.example.countries
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import com.example.countries.data.Country
 import com.example.countries.db.MainRepository
 import com.example.countries.ui.viewmodel.MainViewModel

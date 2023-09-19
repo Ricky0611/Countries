@@ -9,11 +9,12 @@ import com.example.countries.db.MainRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class MainViewModel(val mainRepository: MainRepository): ViewModel() {
+class MainViewModel(private val mainRepository: MainRepository): ViewModel() {
 
     private val _countryList = MutableLiveData<List<Country>>()
     val countryList: LiveData<List<Country>> = _countryList
-    val error = MutableLiveData<String>()
+    private val _error = MutableLiveData<String>()
+    val error: LiveData<String> = _error
 
     fun getCountries() {
         viewModelScope.launch(Dispatchers.IO) {
@@ -28,7 +29,7 @@ class MainViewModel(val mainRepository: MainRepository): ViewModel() {
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
-                error.postValue("Error: $e")
+                _error.postValue("Error: $e")
             }
         }
     }
