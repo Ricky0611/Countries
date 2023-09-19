@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Countries</string>
+    <string name="location">%1$s, %2$s</string>
+    <string name="empty_content">Sorry for empty content, please try again later!</string>
+</resources>
